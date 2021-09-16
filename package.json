@@ -1,0 +1,12 @@
+{
+    "name": "testrepo",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows_testrepo.json",
+            "credentialsFile": "flows_testrepo_cred.json"
+        }
+    }
+}
