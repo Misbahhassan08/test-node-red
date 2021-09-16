@@ -1,1 +1,2103 @@
-[{"id":"93253048.ae51c","type":"tab","label":"TempNeuronNR1","disabled":false,"info":""},{"id":"910daa92.4e1a58","type":"tab","label":"Synopses","disabled":false,"info":""},{"id":"a16896c5.356de8","type":"tab","label":"TempNeuronNR2","disabled":false,"info":""},{"id":"860df2a6.856f7","type":"tab","label":"Self Paractice","disabled":false,"info":""},{"id":"1d2737a9.e9bd68","type":"tab","label":"Function Node Test ","disabled":false,"info":""},{"id":"4c105b51.bf77b4","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"99e1f295.93fb5","type":"tab","label":"Flow 2","disabled":false,"info":""},{"id":"56d0111f.5bf52","type":"mqtt-broker","name":"iRobotX Broker","broker":"test.mosquitto.org","port":"1883","clientid":"","usetls":false,"compatmode":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""},{"id":"12bc30f7.4c611f","type":"ui_base","theme":{"name":"theme-dark","lightTheme":{"default":"#0094CE","baseColor":"#1b1c1d","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#162c2d","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#097479","value":"#162c2d","edited":true},"page-titlebar-backgroundColor":{"value":"#162c2d","edited":false},"page-backgroundColor":{"value":"#111111","edited":false},"page-sidebar-backgroundColor":{"value":"#333333","edited":false},"group-textColor":{"value":"#2f5e60","edited":false},"group-borderColor":{"value":"#555555","edited":false},"group-backgroundColor":{"value":"#333333","edited":false},"widget-textColor":{"value":"#eeeeee","edited":false},"widget-backgroundColor":{"value":"#162c2d","edited":false},"widget-borderColor":{"value":"#333333","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey","palette":"light"}},"site":{"name":"Node-RED Dashboard","hideToolbar":"false","allowSwipe":"false","lockMenu":"true","allowTempTheme":"none","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"46d996e1.a59c68","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false},{"id":"9d717f09.84715","type":"ui_group","name":"Default","tab":"46d996e1.a59c68","order":1,"disp":true,"width":"25","collapse":false},{"id":"965d8c56.63ded","type":"mqtt-broker","name":"Broker","broker":"test.mosquitto.org","port":"1883","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""},{"id":"b1d9d1fa.350a38","type":"ui_group","name":"Chart with integer X axis","tab":"9d7c530e.2785a","order":1,"disp":true,"width":"12"},{"id":"9d7c530e.2785a","type":"ui_tab","name":"Chart.js example","icon":"dashboard","order":2},{"id":"5673f1d5.dd5f1","type":"mqtt-broker","name":"","broker":"mybroker","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"15","cleansession":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","closeTopic":"","closeRetain":"false","closePayload":"","willTopic":"","willQos":"0","willRetain":"false","willPayload":""},{"id":"7d87676a.6869b8","type":"google-cloud-credentials","name":"misbah"},{"id":"c4c590df.7472d","type":"mqtt out","z":"93253048.ae51c","name":"OutgoingMsg","topic":"Robot1/TempNeuronNR1/Outgoing","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"56d0111f.5bf52","x":2230,"y":1040,"wires":[]},{"id":"53ea5627.5f2628","type":"mqtt in","z":"a16896c5.356de8","name":"IncomingMsg","topic":"Robot1/TempNeuronNR2/Incoming","qos":"2","datatype":"auto","broker":"56d0111f.5bf52","nl":false,"rap":false,"x":250,"y":240,"wires":[["d393db16.119618"]]},{"id":"e8a92905.591658","type":"mqtt out","z":"a16896c5.356de8","name":"OutgoingMsg","topic":"Robot1/TempNeuronNR2/Outgoing","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"56d0111f.5bf52","x":830,"y":180,"wires":[]},{"id":"6b30eeed.f5cbf","type":"mqtt in","z":"910daa92.4e1a58","name":"NR1","topic":"Robot1/TempNeuronNR1/Outgoing","qos":"2","datatype":"auto","broker":"56d0111f.5bf52","nl":false,"rap":false,"x":290,"y":220,"wires":[["92d1fc20.de0a7"]]},{"id":"92d1fc20.de0a7","type":"mqtt out","z":"910daa92.4e1a58","name":"TempNeuronPy","topic":"Robotid/Neuronid/Incoming","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"56d0111f.5bf52","x":620,"y":220,"wires":[]},{"id":"d393db16.119618","type":"debug","z":"a16896c5.356de8","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":480,"y":300,"wires":[]},{"id":"a945a349.37d3e","type":"mqtt in","z":"910daa92.4e1a58","name":"TempNeuronPy","topic":"Robotid/Neuronid/Outgoingxxxx","qos":"2","datatype":"auto","broker":"56d0111f.5bf52","nl":false,"rap":false,"x":320,"y":340,"wires":[[]]},{"id":"93352d22.610a3","type":"mqtt out","z":"910daa92.4e1a58","name":"TempneuronNR2","topic":"Robot1/TempNeuronNR2/Incoming","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"56d0111f.5bf52","x":630,"y":340,"wires":[]},{"id":"4ae5f124.f5db6","type":"inject","z":"93253048.ae51c","name":"PacketHandler Torque Off","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":64,\"Byte\":1,\"Val\":0},{\"ID\":2,\"Address\":64,\"Byte\":1,\"Val\":0}]}]}","payloadType":"json","x":1250,"y":1140,"wires":[["c4c590df.7472d"]]},{"id":"a4092dfb.dad33","type":"inject","z":"93253048.ae51c","name":"PacketHandler Torque On","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":64,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":64,\"Byte\":1,\"Val\":1}]}]}","payloadType":"json","x":1250,"y":1180,"wires":[["c4c590df.7472d"]]},{"id":"5e0d851.35c9c7c","type":"mqtt in","z":"910daa92.4e1a58","name":"TestFreq","topic":"Robotid/Neuronid/Outgoing","qos":"0","datatype":"auto","broker":"56d0111f.5bf52","nl":false,"rap":false,"x":280,"y":540,"wires":[["adfcfde6.d6cb5"]]},{"id":"8761e38c.6b979","type":"inject","z":"93253048.ae51c","name":"LED Off","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":"1","topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":65,\"Byte\":1,\"Val\":0},{\"ID\":2,\"Address\":65,\"Byte\":1,\"Val\":0}]}]}","payloadType":"json","x":1190,"y":1060,"wires":[["c4c590df.7472d"]]},{"id":"870b7eba.d4653","type":"inject","z":"93253048.ae51c","name":"LED On","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":"1","topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":65,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":65,\"Byte\":1,\"Val\":1}]}]}","payloadType":"json","x":1190,"y":1100,"wires":[["c4c590df.7472d"]]},{"id":"992ea7a8.c61ed8","type":"inject","z":"93253048.ae51c","name":"Operating Mode Velocity","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":"1","topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":11,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":11,\"Byte\":1,\"Val\":1}]}]}","payloadType":"json","x":1250,"y":1020,"wires":[["c4c590df.7472d"]]},{"id":"214ac044.e251e","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":940,"wires":[["82e9cc4e.485c9"]]},{"id":"82e9cc4e.485c9","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"{\t    \"First key \": $keys(payload),\t    \"Nested Key \": $keys(payload.Neuron[1].Data[0].**)\t}\t","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1000,"y":940,"wires":[["3022b727.d3b2f8"]]},{"id":"3022b727.d3b2f8","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":940,"wires":[]},{"id":"5eb87dd9.880734","type":"comment","z":"860df2a6.856f7","name":"Reading Index Key ","info":"","x":750,"y":900,"wires":[]},{"id":"450eae57.e3993","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"},{"p":"var","v":"1","vt":"num"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1040,"wires":[["74b256de.945ed8"]]},{"id":"74b256de.945ed8","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"{\t\"Object\" : $spread(payload.Neuron[1].Data[0])[1] ,\t\"Only Value\": $spread(payload.Neuron[1].Data[0]).* \t}\t\t","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1000,"y":1040,"wires":[["ea994944.892a58"]]},{"id":"ea994944.892a58","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1040,"wires":[]},{"id":"36986a91.71e956","type":"comment","z":"860df2a6.856f7","name":"Reading Index Values","info":"","x":760,"y":1000,"wires":[]},{"id":"3b0257ce.cb31c8","type":"inject","z":"860df2a6.856f7","name":"sample data","props":[{"p":"payload"},{"p":"tree","v":"tree","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"index\":[7],\"timme\":-5,\"timmenu\":17,\"tid\":\"2019-08-08T12:00:00Z\",\"datum\":\"8/8 kl.12\",\"plats\":[15.611086,60.599615],\"parametrar\":[{\"name\":\"msl\",\"levelType\":\"hmsl\",\"level\":0,\"unit\":\"hPa\",\"values\":[1001.1]},{\"name\":\"tree\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"Cel\",\"values\":[16.4]},{\"name\":\"vis\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"km\",\"values\":[22.5]},{\"name\":\"wd\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"degree\",\"values\":[114]},{\"name\":\"ws\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"m/s\",\"values\":[3.6]},{\"name\":\"r\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"percent\",\"values\":[94]},{\"name\":\"tstm\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"percent\",\"values\":[12]},{\"name\":\"tcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[8]},{\"name\":\"lcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[7]},{\"name\":\"mcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[2]},{\"name\":\"hcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[7]},{\"name\":\"gust\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"m/s\",\"values\":[8.6]},{\"name\":\"pmin\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.6]},{\"name\":\"pmax\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.9]},{\"name\":\"spp\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"percent\",\"values\":[0]},{\"name\":\"pcat\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"category\",\"values\":[3]},{\"name\":\"pmean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.8]},{\"name\":\"pmedian\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.8]},{\"name\":\"Wsymb2\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"category\",\"values\":[20]}]}","payloadType":"json","x":770,"y":680,"wires":[["6a16cccf.afd7d4"]]},{"id":"6a16cccf.afd7d4","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.**[name=$$.tree].values","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1020,"y":680,"wires":[["cfab233d.af763"]]},{"id":"cfab233d.af763","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":1430,"y":680,"wires":[]},{"id":"cf97953.7c8f168","type":"comment","z":"860df2a6.856f7","name":"getting value of key from json ","info":"","x":800,"y":620,"wires":[]},{"id":"7e81717c.2814","type":"comment","z":"860df2a6.856f7","name":"Adding Keys and values","info":"","x":760,"y":1100,"wires":[]},{"id":"cba55373.ef1fa","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1160,"wires":[["acfe1034.07d32"]]},{"id":"acfe1034.07d32","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload.Neuron[1].Data[0].addingKey","pt":"msg","to":"ksjdhksjhd","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":1100,"y":1160,"wires":[["a732c981.2c3fb8"]]},{"id":"a732c981.2c3fb8","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1160,"wires":[]},{"id":"db950ba0.d81aa8","type":"comment","z":"860df2a6.856f7","name":"Adding object","info":"","x":730,"y":1220,"wires":[]},{"id":"670a2f6.a84cbd","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1280,"wires":[["5b82b30d.73669c"]]},{"id":"5b82b30d.73669c","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload.Neuron[1].Data[0].addingKey","pt":"msg","to":"{\"a\":1,\"b\":2}","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1100,"y":1280,"wires":[["38a386cb.6ad02a"]]},{"id":"38a386cb.6ad02a","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1280,"wires":[]},{"id":"804a6fc7.568cc","type":"comment","z":"860df2a6.856f7","name":"Updating Keys","info":"","x":740,"y":1340,"wires":[]},{"id":"de7ebccd.4f946","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1400,"wires":[["58ec13a.e3d40ec"]]},{"id":"47048033.19f3a","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1400,"wires":[]},{"id":"58ec13a.e3d40ec","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload.Neuron[1].Data[0]","pt":"msg","to":"payload.Neuron[1].Data[0]\t{\t\"ID\": ID,\t\"Address\": Address,\t\"newByte\": Byte,\t \"Val\": Val\t}","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1060,"y":1400,"wires":[["47048033.19f3a"]]},{"id":"6bdb26ba.905ac8","type":"comment","z":"860df2a6.856f7","name":"Updating Values","info":"","x":740,"y":1480,"wires":[]},{"id":"7caab3.180fe54c","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1560,"wires":[["e5176f2d.81dd5"]]},{"id":"73d88631.8aa748","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1560,"wires":[]},{"id":"e5176f2d.81dd5","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"change","p":"payload.Neuron[0].NeuronId","pt":"msg","from":"Dyn","fromt":"str","to":"CHANGED VALUE","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":1080,"y":1560,"wires":[["73d88631.8aa748"]]},{"id":"e0c31aec.38ae38","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":730,"y":1720,"wires":[["cb6ea401.942408"]]},{"id":"2b02125e.81c87e","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1410,"y":1720,"wires":[]},{"id":"cb6ea401.942408","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload.Neuron[1]","pt":"msg","to":"$each(payload.Neuron[1], function($v,$k){\t$k = \"Data\" ? {\"DataChanged\":$v} : {$k:$v}\t})\t","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1040,"y":1720,"wires":[["2b02125e.81c87e"]]},{"id":"8f0568df.445798","type":"comment","z":"860df2a6.856f7","name":"Updating Object Name","info":"","x":760,"y":1640,"wires":[]},{"id":"358f2053.91163","type":"inject","z":"860df2a6.856f7","name":"Json","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}","payloadType":"json","x":710,"y":1880,"wires":[["aae5162b.5edc08"]]},{"id":"8aee8979.5d2b88","type":"debug","z":"860df2a6.856f7","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":1390,"y":1880,"wires":[]},{"id":"aae5162b.5edc08","type":"change","z":"860df2a6.856f7","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"$sort(Neuron[1], function($a, $b){\t$a.Address > $b.Address\t})","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":980,"y":1880,"wires":[["8aee8979.5d2b88"]]},{"id":"8c0d98f6.5d2338","type":"debug","z":"910daa92.4e1a58","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":540,"wires":[]},{"id":"adfcfde6.d6cb5","type":"json","z":"910daa92.4e1a58","name":"","property":"payload","action":"obj","pretty":false,"x":440,"y":540,"wires":[["8c0d98f6.5d2338"]]},{"id":"7ef4052.c2ac7fc","type":"inject","z":"93253048.ae51c","name":"GSR receive LED status","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":"1","topic":"","payload":"{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"GSR\",\"Address\":65,\"Byte\":1}]},{\"Data\":[{\"ID\":1,\"Val\":1},{\"ID\":2,\"Val\":1}]}]}","payloadType":"json","x":1250,"y":980,"wires":[["c4c590df.7472d"]]},{"id":"d169c00e.e86a58","type":"ui_slider","z":"1d2737a9.e9bd68","d":true,"name":"","label":"{{value}}","tooltip":"","group":"9d717f09.84715","order":3,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","topicType":"str","min":"-1024","max":"1024","step":1,"x":350,"y":220,"wires":[["12314e09.b59232"]]},{"id":"12314e09.b59232","type":"function","z":"1d2737a9.e9bd68","name":"motor1","func":"\nflow.set(\"storeP1\", msg.payload);\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":540,"y":240,"wires":[["c1ab36b5.c86458"]]},{"id":"72754745.375098","type":"function","z":"1d2737a9.e9bd68","name":"motor2","func":"flow.set(\"storeP2\", msg.payload);\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":540,"y":300,"wires":[["c1ab36b5.c86458"]]},{"id":"1c4f39f4.a156c6","type":"debug","z":"1d2737a9.e9bd68","name":"","active":false,"tosidebar":true,"console":true,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":960,"y":200,"wires":[]},{"id":"c1ab36b5.c86458","type":"function","z":"1d2737a9.e9bd68","name":"","func":"var msg1 = {};\nvar msg2 = {};\n//node.status({fill:\"green\",shape:\"ring\",text:\"test\"});\nmsg.payload1 = (flow.get(\"storeP1\") || 0);\nmsg.payload2 = (flow.get(\"storeP2\") || 0);\nmsg.payload = {\n    \"Neuron\": [\n        {\n            \"NeuronId\": \"Dyn\"\n        },\n        {\n            \"Meta\": [\n                {\n                    \"Type\": \"GSW\",\n                }\n            ]\n        },\n        {\n            \"Data\": [\n                {\n                    \"ID\": 0,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload1\n                },\n                {\n                    \"ID\": 1,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload2\n                }\n            ]\n        }\n    ]\n};\n//return msg;\n\nmsg1.payload = msg.payload1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg ,msg1, msg2];","outputs":3,"noerr":0,"initialize":"","finalize":"","libs":[],"x":720,"y":260,"wires":[["1c4f39f4.a156c6"],["d47e3ef7.481ba"],["d47e3ef7.481ba"]]},{"id":"d570959d.a6caa8","type":"ui_slider","z":"1d2737a9.e9bd68","d":true,"name":"","label":"{{value}}","tooltip":"","group":"9d717f09.84715","order":3,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","topicType":"str","min":"-1024","max":"1024","step":1,"x":350,"y":300,"wires":[["72754745.375098"]]},{"id":"d47e3ef7.481ba","type":"ui_chart","z":"1d2737a9.e9bd68","d":true,"name":"","group":"9d717f09.84715","order":2,"width":0,"height":0,"label":"chart","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"-1024","ymax":"1024","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"1","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":970,"y":300,"wires":[[]]},{"id":"6b891749.2be4c8","type":"ui_slider","z":"93253048.ae51c","name":"Motor1 velocity","label":"{{value}}","tooltip":"","group":"9d717f09.84715","order":3,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","topicType":"str","min":"-22","max":"22","step":1,"x":1200,"y":860,"wires":[["57653576.ad59ec"]]},{"id":"57653576.ad59ec","type":"function","z":"93253048.ae51c","name":"Motor1 ","func":"\nflow.set(\"storeP1\", msg.payload);\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":1420,"y":860,"wires":[["eb0d936.2e9fc7"]]},{"id":"5f6524c7.b2cc0c","type":"function","z":"93253048.ae51c","name":"Motor2","func":"flow.set(\"storeP2\", msg.payload);\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":1420,"y":920,"wires":[["eb0d936.2e9fc7"]]},{"id":"eb0d936.2e9fc7","type":"function","z":"93253048.ae51c","name":"","func":"var msg1 = {};\nvar msg2 = {};\n//node.status({fill:\"green\",shape:\"ring\",text:\"test\"});\nmsg.payload1 = (flow.get(\"storeP1\") || 0);\nmsg.payload2 = (flow.get(\"storeP2\") || 0);\nmsg.payload = {\n    \"Neuron\": [\n        {\n            \"NeuronId\": \"Dyn\"\n        },\n        {\n            \"Meta\": [\n                {\n                    \"Type\": \"GSW\",\n                }\n            ]\n        },\n        {\n            \"Data\": [\n                {\n                    \"ID\": 1,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload1\n                },\n                {\n                    \"ID\": 2,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload2\n                }\n            ]\n        }\n    ]\n};\n//return msg;\n\nmsg1.payload = msg.payload1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg ,msg1, msg2];","outputs":3,"noerr":0,"initialize":"","finalize":"","libs":[],"x":1660,"y":880,"wires":[["a323b3ff.54ca7","c4c590df.7472d"],[],[]]},{"id":"f2684e6f.356bf","type":"ui_slider","z":"93253048.ae51c","name":"Motor2 velocity","label":"{{value}}","tooltip":"","group":"9d717f09.84715","order":3,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","topicType":"str","min":"-22","max":"22","step":1,"x":1200,"y":920,"wires":[["5f6524c7.b2cc0c"]]},{"id":"f8022009.bd8fe","type":"ui_chart","z":"93253048.ae51c","name":"","group":"9d717f09.84715","order":2,"width":0,"height":0,"label":"chart","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"0","ymax":"50000","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"1","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":1970,"y":640,"wires":[[]]},{"id":"14a58f4c.6df5c1","type":"mqtt in","z":"93253048.ae51c","name":"Position Subscriber","topic":"Robotid/Neuronid/Outgoing","qos":"0","datatype":"auto","broker":"56d0111f.5bf52","nl":false,"rap":false,"x":1290,"y":640,"wires":[["4487c1f0.807fc"]]},{"id":"4487c1f0.807fc","type":"json","z":"93253048.ae51c","name":"","property":"payload","action":"obj","pretty":false,"x":1480,"y":640,"wires":[["76cf3aac.d450e4","dd286412.5f08e8"]]},{"id":"76cf3aac.d450e4","type":"function","z":"93253048.ae51c","name":"","func":"var msg1 = {};\nvar msg2 = {};\n\nmsg1.payload = msg.payload.m1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload.m2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg1, msg2];","outputs":2,"noerr":0,"initialize":"","finalize":"","libs":[],"x":1660,"y":640,"wires":[["f8022009.bd8fe"],["f8022009.bd8fe"]]},{"id":"dd286412.5f08e8","type":"debug","z":"93253048.ae51c","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1950,"y":580,"wires":[]},{"id":"a323b3ff.54ca7","type":"debug","z":"93253048.ae51c","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1940,"y":860,"wires":[]},{"id":"83beecec.1abcf","type":"comment","z":"4c105b51.bf77b4","name":"Read me","info":"This charting example extends node-red-dashboard and the work by Colin Law here:\nhttp://flows.nodered.org/flow/c3dc75c47323a2754f5285225bce64b5\n\nView the chart at http://localhost:1880/ui\n\nBoth the dashboard chart and Colin's example uses time as the X-axis. The example\nhere uses an integer as the x-axis. Colin's example uses Chart.js inside a\nnode-red-dashboard template node. The example here leaves Colin's code almost \nunchanged except that the chart.js XAxis is changed from:\n\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    }\n                }],\n\nto this:\n              xAxes: [{\n                    type: 'linear',\n                    position: 'bottom'\n                    }\n                ],\n                \nI also adjusted the way the nodes are rendered.\n\nThis example pre-prepares the data object and uses the msg.action = \"load\" \nmethod to ask the template code to render the data. \n\nA dashboard button on the UI page generates fresh data with a different \nscale each time.\n\n\n","x":400,"y":220,"wires":[]},{"id":"2b14c627.b060aa","type":"ui_template","z":"4c105b51.bf77b4","group":"b1d9d1fa.350a38","name":"Chart.js example","order":9,"width":"8","height":"8","format":"<!-- See the read me comment node. Colin Law's original notes follow -->\n\n<!--\nA node-red Dashboard UI template to draw charts using chart.js\nBefore use download the file Chart.bundle.min.js from chartjs.org and \nsave in an appropriate folder (e.g. .node-red/static). \nIn settings.js set httpStatic to the full path of that folder and restart node-red.\nMake sure that the options for 'Pass through messages' and 'Add output messages' \nin this node are cleared.\nFor basic use set the id and size you want in the canvas tag and set chartID to the id\nSetup chartDef as required for your chart (see the chart.js docs)\nIn addition, for each dataset specify in chartDef the message topic that you will use for that channel.\nTo (optionally) provide the chart with a one-off set of data send the node a message with:\nmsg.action = \"load\"\nmsg.payload = [\n{topic: \"mytopic1\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n{topic: \"mytopic2\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n...]\nWhere mytopic1 and mytopic2 are the the topics specified in the chartDef\n\nTo provide the chart with data incrementally (for a time series for example)\nsend it messages of the form\n{topic: \"mytopic1\", payload: {x:xvalue,y:yvalue}}\nThe chart will be updated as each sample is provided.\nTo limit the growth of the chart set chartMaxPoints and/or chartTimeSpan in the Chart Helper node\nas described at the head of that node.\nIf you find that chart seems to flicker and scroll bars come and go then try \nsetting a size other than auto in the Size specification for this node.\n\nFor Bar charts the x value is the label for the bar and the y value is the bar value\n\nNote that since the chart samples are stored in the browser then the chart will be cleared each\ntime the browser is refreshed (and will be clear on initially opening the view). In order to \nprovided persistency over browser opening and refresh this node may be used in conjunction with\nthe Chart Helper function node.  Details for its use are in the source of that node.\n\nIf your flow includes more that one instance of this script then the line fetching \nChart.bundle.min.js need only be included in one of them\n-->\n\n<script src=\"/Chart.bundle.min.js\"></script>\n<canvas id=\"myChartSimple1\" width=\"300\" height=\"300\"></canvas>\n<script>\n(function() {\n    var chartID = \"myChartSimple1\";           // set this to the id you have specified in the canvas tag above\n    // setup the chart definition as defined in the chart.js documentation, in addition setting up the topic\n    // for each channel\n    var chartDef = {\n        type: 'line',\n        data: {\n            datasets: [{\n                topic: \"Sin\",    // used here not by chart.js\n                label: \"Sin\",\n                yAxisID: \"1\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#0000ff\",\n                pointRadius: 5,\n                pointHoverRadius: 5,\n                pointBorderColor: \"#0000ff\",\n                pointBackgroundColor: \"#0000ff\",\n                backgroundColor:  \"#0000ff\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }, {\n                topic: \"Triangle\",    // used here not by chart.js\n                label: \"Triangle\",\n                yAxisID: \"2\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#ff0000\",\n                pointRadius: 5,\n                pointHoverRadius: 5,\n                pointBorderColor: \"#ff0000\",\n                pointBackgroundColor: \"#ff0000\",\n                backgroundColor:  \"#ff0000\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }]\n        },\n        options: {\n            scales: {\n                xAxes: [{\n                    type: 'linear',\n                    position: 'bottom'\n                    }\n                ],\n                yAxes: [{\n                    id: \"1\",\n                    ticks: {\n                        min: -1,\n                        max: 1,\n                        stepSize: 0.2\n                    }\n                }, {\n                    id: \"2\",\n                    ticks: {\n                        min: -10,\n                        max: 10,\n                        stepSize: 2\n                    }\n                }]\n            },\n            animation: {\n                duration: 0\n            }\n        }\n    }\n        \n/***** You shouldn't normally need to change anything below here *****/    \n    var myChart = null;\n    var loaded = false;     // indicates whether we have already had a load action\n    var chartTimeSpan;\n    var chartMaxPoints;\n\n    function doChart(msg, scope) {\n        if (!myChart) {\n            // chart does not exist so load the data and create it\n            var ctx = document.getElementById(chartID);\n            myChart = new Chart(ctx, chartDef);     \n        }\n        // chart already exists, update it\n        var datasets = myChart.data.datasets;\n        // is this a load or preload action?\n        if (msg.action === \"load\" || msg.action === \"preload\") {\n            // yes, do not allow preload if we have already had a load\n            // so do it if this is a load or we have not previously had a load\n            if (msg.action === \"load\" || !loaded) {\n                // pick up chartTimeSpan and chartMaxPoints if they have been provided\n                if (typeof msg.chartTimeSpan != 'undefined') {\n                    chartTimeSpan = msg.chartTimeSpan;\n                }\n                if (typeof msg.chartMaxPoints != 'undefined') {\n                    chartMaxPoints = msg.chartMaxPoints;\n                }\n                    \n                // replace existing data for matching topics\n                for (var j = 0; j < msg.payload.length; j++) {\n                    var topic = msg.payload[j].topic;\n                    // find it in the chart\n                    for (var i = 0; i < datasets.length; i++) {\n                        if (datasets[i].topic == topic) {\n                            // if stripping old samples by time is required then ensure the x value is Date\n                            if (chartTimeSpan > 0 ) {\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    if (typeof data[k].x === \"string\") {\n                                        data[k].x = new Date(data[k].x);\n                                    }\n                                }\n                            }\n                            if (chartDef.type !== \"bar\") {\n                                datasets[i].data = msg.payload[j].data;\n                            } else {\n                                // bar chart so x values must go to labels and y values to dataset\n                                datasets[i].data = [];\n                                myChart.data.labels = [];\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    datasets[i].data.push(data[k].y);\n                                    myChart.data.labels.push(data[k].x);\n                                }\n                            }\n                            break;\n                        }\n                    }\n                }\n            }\n            if (msg.action === \"load\") loaded = true;\n            myChart.update();\n        } else {\n            // does the topic match one of the datasets?\n            for (var i = 0; i < datasets.length; i++) {\n                if (datasets[i].topic == msg.topic) {\n                    // if stripping old samples by time is required then ensure the x value is Date\n                    if (chartTimeSpan > 0 && typeof msg.payload.x === \"string\") {\n                        msg.payload.x = new Date(msg.payload.x);\n                    }\n                    if (chartDef.type !== \"bar\") {\n                        datasets[i].data.push(msg.payload);\n                    } else {\n                         // bar chart so x value must go to labels and y value to dataset\n                        datasets[i].data.push(msg.payload.y);\n                        myChart.data.labels.push(msg.payload.x);\n                    }\n                    myChart.update();\n                    break;\n                }\n            }\n        }\n        // strip off samples older than now\n        // charTimeSpan == 0 implies don't do it\n        var shifted = false;\n        if (chartTimeSpan > 0) {\n            var now = new Date();\n            var oldestTimeAllowed = now - chartTimeSpan;\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data[0] && getTime(dataset.data[0].x) < oldestTimeAllowed) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        // strip samples off the front if there are now too many\n        // charTimeSpan == 0 implies don't do it\n        if (chartMaxPoints > 0) {\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data.length > chartMaxPoints) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        if (shifted) {\n            myChart.update();\n        }\n    };\n\n    // gets the time of an x value, works for strings or Date types\n    function getTime(x) {\n        if (typeof x === \"string\") x = new Date(x);\n        return x.getTime();\n    }\n    \n    // builds the preload message for sending back to the chart helper\n    function preloadMsg() {\n        var preMsg = {action: \"preload\", payload: \"preload\"};\n        // build array of topics in chart\n        var topics = [];\n        for (var i=0; i<chartDef.data.datasets.length; i++) {\n            topics.push(chartDef.data.datasets[i].topic);\n        }\n        preMsg.topics = topics;\n        // has the chart already been created\n        if (myChart) {\n            preMsg.lastXValue = 1;\n        } else {\n            preMsg.lastXValue = 0;\n        }\n        return preMsg;\n    }\n\n    (function(scope) {\n        // this code gets run when the a view is opened on the node in the browser\n        // send a preload message back to node red to ask it send\n        // us a complete set of data. Pass down max points and time span to the helper node for it to use\n        // plus an array of the topics of interest\n        scope.send( preloadMsg() );\n        \n        scope.$watch('msg', function(msg) {\n            if (msg) {\n                doChart(msg, scope);\n            }\n        });\n    })(scope);\n})();\n</script>\n","storeOutMessages":false,"fwdInMessages":false,"resendOnRefresh":false,"templateScope":"local","x":896.5499572753906,"y":343.8833312988281,"wires":[[]]},{"id":"382b4940.b5aece","type":"debug","z":"4c105b51.bf77b4","name":"View data object","active":true,"console":"false","complete":"true","x":894.0000305175781,"y":403.1333312988281,"wires":[]},{"id":"e8e31a24.1c89d","type":"inject","z":"4c105b51.bf77b4","name":"Load Data Set","repeat":"","crontab":"","once":false,"topic":"","payload":"","payloadType":"str","x":433.99998474121094,"y":288.3833312988281,"wires":[["4f0a7091.a1a64"]]},{"id":"4f0a7091.a1a64","type":"function","z":"4c105b51.bf77b4","name":"Pre-load test data","func":"\n/* This function creates a two data sets, with different topics,\n   the same x values and different y values*/\n\n// Change the scale factor each time.\nvar scale = context.get('scale') || 0;\nif (msg.topic == \"Reset\") {\n    scale = 0;\n}\nscale++;\ncontext.set('scale', scale);\n\nmsg.payload = [];       // This will be an array of {topic, data} objects\nvar dataPoints1 = [];   // These will be the first array of data points \nvar dataPoints2 = [];   // These will be the second array of data points \nvar numPoints = 20;     // We will create one more than this.\n\n// For the first data set create a sine wave\nfor (var i=0; i<=numPoints; i++) {\n    var point = {};\n    point.x = i;\n    point.y = Math.sin(2 * 3.14 * (i/numPoints)) * scale/10;\n    // build the data array    \n    dataPoints1.push(point);\n}\n\n// For the second data set create a triangle\nfor (var i=0; i<=numPoints; i++) {\n    var point = {};\n    point.x = i;\n    if (i<(numPoints/2)) {\n        // ramp up\n        point.y = i * scale/10;\n    }\n    else {\n        // ramp down\n        point.y = (numPoints - i) * scale/10;\n    }\n    dataPoints2.push(point);    // add to the array\n}\n\nmsg.action = \"load\";    // This instructs the chart node to paint the data\n\n// The payload is an array of two {topic, data} objects\nmsg.payload = [{topic: \"Sin\", data: dataPoints1},\n                {topic: \"Triangle\", data: dataPoints2}];\n\nreturn msg;","outputs":1,"noerr":0,"x":675,"y":344.5333251953125,"wires":[["2b14c627.b060aa","382b4940.b5aece"]]},{"id":"60b53a17.513d74","type":"ui_button","z":"4c105b51.bf77b4","name":"New Data Button","group":"b1d9d1fa.350a38","order":0,"width":0,"height":0,"label":"New Data","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"","x":421.99998474121094,"y":346.18333435058594,"wires":[["4f0a7091.a1a64"]]},{"id":"e44ff289.b11b28","type":"ui_button","z":"4c105b51.bf77b4","name":"Reset","group":"b1d9d1fa.350a38","order":0,"width":0,"height":0,"label":"Reset","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"Reset","x":458,"y":401.1833190917969,"wires":[["4f0a7091.a1a64"]]},{"id":"5813f8b3.fe3fb8","type":"inject","z":"93253048.ae51c","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":1170,"y":780,"wires":[[]]},{"id":"7dcfdf56.eca39","type":"function","z":"4c105b51.bf77b4","name":"","func":"const user = {\n    id: 1,\n    username: 'brad',\n    email: 'brad@gmail.com'\n}\njsonwebtoken.sign({user:user}, 'secretKey', (err, token)=> {\n    res.json({\n        token\n    });\n    msg.payload = res;\n});\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[{"var":"jsonwebtoken","module":"jsonwebtoken"}],"x":560,"y":720,"wires":[["9e64caa1.920078"]]},{"id":"f0ae08f.78607f8","type":"inject","z":"4c105b51.bf77b4","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":310,"y":720,"wires":[["7dcfdf56.eca39"]]},{"id":"9e64caa1.920078","type":"debug","z":"4c105b51.bf77b4","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":900,"y":720,"wires":[]},{"id":"11f41337.5adc7d","type":"google-cloud-bigquery","z":"4c105b51.bf77b4","account":"7d87676a.6869b8","keyFilename":"","projectId":"my-project-1480912023860","query":"select id, tags from `bigquery-public-data.stackoverflow.posts_questions`\nlimit 10","name":"","x":600,"y":1200,"wires":[["df813970.1b08e8"]]},{"id":"9cbd37fa.2cec88","type":"inject","z":"4c105b51.bf77b4","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":350,"y":1200,"wires":[["11f41337.5adc7d"]]},{"id":"df813970.1b08e8","type":"debug","z":"4c105b51.bf77b4","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":980,"y":1240,"wires":[]},{"id":"cdb55f47.8e38d","type":"function","z":"99e1f295.93fb5","name":"","func":"const auth = firebaseAuth.getAuth();\nconst email = \"misbahhassan08@gmail.com\";\nconst password = \"misbahdev24\";\n firebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n  .then((userCredential) => {\n    // Signed in \n    const user = userCredential.user;\n    // ...\n    msg.payload= user;\n  })\n  .catch((error) => {\n    const errorCode = error.code;\n    const errorMessage = error.message;\n    // ..\n    msg.payload = error;\n  });\nreturn msg;","outputs":1,"noerr":0,"initialize":"// Code added here will be run once\n// whenever the node is started.\n// Code added here will be run once\n// whenever the node is started.\n//initialize App there \nconst firebaseConfig = {\n  apiKey: \"AIzaSyBm9aqlnW3kprayTQRXPM_DXcB3Q3vy45E\",\n  authDomain: \"synapses-323217.firebaseapp.com\",\n  databaseURL: \"https://synapses-323217-default-rtdb.firebaseio.com\",\n  projectId: \"synapses-323217\",\n  storageBucket: \"synapses-323217.appspot.com\",\n  messagingSenderId: \"425490400637\",\n  appId: \"1:425490400637:web:b255d2603e47dfa8673814\",\n  measurementId: \"G-4BZDVWHKZD\"\n};\n\nfirebase.initializeApp(firebaseConfig);\n","finalize":"","libs":[{"var":"firebaseApp","module":"firebase/app"},{"var":"firebaseAuth","module":"firebase/auth"}],"x":600,"y":320,"wires":[["d171c69.980c938"]]},{"id":"313f3a68.8a40e6","type":"inject","z":"99e1f295.93fb5","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":290,"y":320,"wires":[["cdb55f47.8e38d"]]},{"id":"d171c69.980c938","type":"debug","z":"99e1f295.93fb5","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":940,"y":360,"wires":[]}]
+[
+    {
+        "id": "93253048.ae51c",
+        "type": "tab",
+        "label": "TempNeuronNR1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "910daa92.4e1a58",
+        "type": "tab",
+        "label": "Synopses",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a16896c5.356de8",
+        "type": "tab",
+        "label": "TempNeuronNR2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "860df2a6.856f7",
+        "type": "tab",
+        "label": "Self Paractice",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1d2737a9.e9bd68",
+        "type": "tab",
+        "label": "Function Node Test ",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4c105b51.bf77b4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "99e1f295.93fb5",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "56d0111f.5bf52",
+        "type": "mqtt-broker",
+        "name": "iRobotX Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "12bc30f7.4c611f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#1b1c1d",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#162c2d",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#162c2d",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#162c2d",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#2f5e60",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#162c2d",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "none",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "46d996e1.a59c68",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9d717f09.84715",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "46d996e1.a59c68",
+        "order": 1,
+        "disp": true,
+        "width": "25",
+        "collapse": false
+    },
+    {
+        "id": "965d8c56.63ded",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b1d9d1fa.350a38",
+        "type": "ui_group",
+        "name": "Chart with integer X axis",
+        "tab": "9d7c530e.2785a",
+        "order": 1,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "9d7c530e.2785a",
+        "type": "ui_tab",
+        "name": "Chart.js example",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "5673f1d5.dd5f1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mybroker",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "15",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeRetain": "false",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    },
+    {
+        "id": "7d87676a.6869b8",
+        "type": "google-cloud-credentials",
+        "name": "misbah"
+    },
+    {
+        "id": "c4c590df.7472d",
+        "type": "mqtt out",
+        "z": "93253048.ae51c",
+        "name": "OutgoingMsg",
+        "topic": "Robot1/TempNeuronNR1/Outgoing",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56d0111f.5bf52",
+        "x": 2230,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "53ea5627.5f2628",
+        "type": "mqtt in",
+        "z": "a16896c5.356de8",
+        "name": "IncomingMsg",
+        "topic": "Robot1/TempNeuronNR2/Incoming",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56d0111f.5bf52",
+        "nl": false,
+        "rap": false,
+        "x": 250,
+        "y": 240,
+        "wires": [
+            [
+                "d393db16.119618"
+            ]
+        ]
+    },
+    {
+        "id": "e8a92905.591658",
+        "type": "mqtt out",
+        "z": "a16896c5.356de8",
+        "name": "OutgoingMsg",
+        "topic": "Robot1/TempNeuronNR2/Outgoing",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56d0111f.5bf52",
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6b30eeed.f5cbf",
+        "type": "mqtt in",
+        "z": "910daa92.4e1a58",
+        "name": "NR1",
+        "topic": "Robot1/TempNeuronNR1/Outgoing",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56d0111f.5bf52",
+        "nl": false,
+        "rap": false,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "92d1fc20.de0a7"
+            ]
+        ]
+    },
+    {
+        "id": "92d1fc20.de0a7",
+        "type": "mqtt out",
+        "z": "910daa92.4e1a58",
+        "name": "TempNeuronPy",
+        "topic": "Robotid/Neuronid/Incoming",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56d0111f.5bf52",
+        "x": 620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d393db16.119618",
+        "type": "debug",
+        "z": "a16896c5.356de8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a945a349.37d3e",
+        "type": "mqtt in",
+        "z": "910daa92.4e1a58",
+        "name": "TempNeuronPy",
+        "topic": "Robotid/Neuronid/Outgoingxxxx",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "56d0111f.5bf52",
+        "nl": false,
+        "rap": false,
+        "x": 320,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "93352d22.610a3",
+        "type": "mqtt out",
+        "z": "910daa92.4e1a58",
+        "name": "TempneuronNR2",
+        "topic": "Robot1/TempNeuronNR2/Incoming",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "56d0111f.5bf52",
+        "x": 630,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4ae5f124.f5db6",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "PacketHandler Torque Off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":64,\"Byte\":1,\"Val\":0},{\"ID\":2,\"Address\":64,\"Byte\":1,\"Val\":0}]}]}",
+        "payloadType": "json",
+        "x": 1250,
+        "y": 1140,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "a4092dfb.dad33",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "PacketHandler Torque On",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":64,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":64,\"Byte\":1,\"Val\":1}]}]}",
+        "payloadType": "json",
+        "x": 1250,
+        "y": 1180,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "5e0d851.35c9c7c",
+        "type": "mqtt in",
+        "z": "910daa92.4e1a58",
+        "name": "TestFreq",
+        "topic": "Robotid/Neuronid/Outgoing",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "56d0111f.5bf52",
+        "nl": false,
+        "rap": false,
+        "x": 280,
+        "y": 540,
+        "wires": [
+            [
+                "adfcfde6.d6cb5"
+            ]
+        ]
+    },
+    {
+        "id": "8761e38c.6b979",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "LED Off",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":65,\"Byte\":1,\"Val\":0},{\"ID\":2,\"Address\":65,\"Byte\":1,\"Val\":0}]}]}",
+        "payloadType": "json",
+        "x": 1190,
+        "y": 1060,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "870b7eba.d4653",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "LED On",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":65,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":65,\"Byte\":1,\"Val\":1}]}]}",
+        "payloadType": "json",
+        "x": 1190,
+        "y": 1100,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "992ea7a8.c61ed8",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "Operating Mode Velocity",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"PacketHandler\"}]},{\"Data\":[{\"ID\":1,\"Address\":11,\"Byte\":1,\"Val\":1},{\"ID\":2,\"Address\":11,\"Byte\":1,\"Val\":1}]}]}",
+        "payloadType": "json",
+        "x": 1250,
+        "y": 1020,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "214ac044.e251e",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 940,
+        "wires": [
+            [
+                "82e9cc4e.485c9"
+            ]
+        ]
+    },
+    {
+        "id": "82e9cc4e.485c9",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"First key \": $keys(payload),\t    \"Nested Key \": $keys(payload.Neuron[1].Data[0].**)\t}\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 940,
+        "wires": [
+            [
+                "3022b727.d3b2f8"
+            ]
+        ]
+    },
+    {
+        "id": "3022b727.d3b2f8",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "5eb87dd9.880734",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Reading Index Key ",
+        "info": "",
+        "x": 750,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "450eae57.e3993",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "var",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1040,
+        "wires": [
+            [
+                "74b256de.945ed8"
+            ]
+        ]
+    },
+    {
+        "id": "74b256de.945ed8",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t\"Object\" : $spread(payload.Neuron[1].Data[0])[1] ,\t\"Only Value\": $spread(payload.Neuron[1].Data[0]).* \t}\t\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1040,
+        "wires": [
+            [
+                "ea994944.892a58"
+            ]
+        ]
+    },
+    {
+        "id": "ea994944.892a58",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "36986a91.71e956",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Reading Index Values",
+        "info": "",
+        "x": 760,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "3b0257ce.cb31c8",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "sample data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "tree",
+                "v": "tree",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"index\":[7],\"timme\":-5,\"timmenu\":17,\"tid\":\"2019-08-08T12:00:00Z\",\"datum\":\"8/8 kl.12\",\"plats\":[15.611086,60.599615],\"parametrar\":[{\"name\":\"msl\",\"levelType\":\"hmsl\",\"level\":0,\"unit\":\"hPa\",\"values\":[1001.1]},{\"name\":\"tree\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"Cel\",\"values\":[16.4]},{\"name\":\"vis\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"km\",\"values\":[22.5]},{\"name\":\"wd\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"degree\",\"values\":[114]},{\"name\":\"ws\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"m/s\",\"values\":[3.6]},{\"name\":\"r\",\"levelType\":\"hl\",\"level\":2,\"unit\":\"percent\",\"values\":[94]},{\"name\":\"tstm\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"percent\",\"values\":[12]},{\"name\":\"tcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[8]},{\"name\":\"lcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[7]},{\"name\":\"mcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[2]},{\"name\":\"hcc_mean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"octas\",\"values\":[7]},{\"name\":\"gust\",\"levelType\":\"hl\",\"level\":10,\"unit\":\"m/s\",\"values\":[8.6]},{\"name\":\"pmin\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.6]},{\"name\":\"pmax\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.9]},{\"name\":\"spp\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"percent\",\"values\":[0]},{\"name\":\"pcat\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"category\",\"values\":[3]},{\"name\":\"pmean\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.8]},{\"name\":\"pmedian\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"kg/m2/h\",\"values\":[0.8]},{\"name\":\"Wsymb2\",\"levelType\":\"hl\",\"level\":0,\"unit\":\"category\",\"values\":[20]}]}",
+        "payloadType": "json",
+        "x": 770,
+        "y": 680,
+        "wires": [
+            [
+                "6a16cccf.afd7d4"
+            ]
+        ]
+    },
+    {
+        "id": "6a16cccf.afd7d4",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.**[name=$$.tree].values",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 680,
+        "wires": [
+            [
+                "cfab233d.af763"
+            ]
+        ]
+    },
+    {
+        "id": "cfab233d.af763",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1430,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "cf97953.7c8f168",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "getting value of key from json ",
+        "info": "",
+        "x": 800,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7e81717c.2814",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Adding Keys and values",
+        "info": "",
+        "x": 760,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "cba55373.ef1fa",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1160,
+        "wires": [
+            [
+                "acfe1034.07d32"
+            ]
+        ]
+    },
+    {
+        "id": "acfe1034.07d32",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Neuron[1].Data[0].addingKey",
+                "pt": "msg",
+                "to": "ksjdhksjhd",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 1160,
+        "wires": [
+            [
+                "a732c981.2c3fb8"
+            ]
+        ]
+    },
+    {
+        "id": "a732c981.2c3fb8",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "db950ba0.d81aa8",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Adding object",
+        "info": "",
+        "x": 730,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "670a2f6.a84cbd",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1280,
+        "wires": [
+            [
+                "5b82b30d.73669c"
+            ]
+        ]
+    },
+    {
+        "id": "5b82b30d.73669c",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Neuron[1].Data[0].addingKey",
+                "pt": "msg",
+                "to": "{\"a\":1,\"b\":2}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 1280,
+        "wires": [
+            [
+                "38a386cb.6ad02a"
+            ]
+        ]
+    },
+    {
+        "id": "38a386cb.6ad02a",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "804a6fc7.568cc",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Updating Keys",
+        "info": "",
+        "x": 740,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "de7ebccd.4f946",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1400,
+        "wires": [
+            [
+                "58ec13a.e3d40ec"
+            ]
+        ]
+    },
+    {
+        "id": "47048033.19f3a",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "58ec13a.e3d40ec",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Neuron[1].Data[0]",
+                "pt": "msg",
+                "to": "payload.Neuron[1].Data[0]\t{\t\"ID\": ID,\t\"Address\": Address,\t\"newByte\": Byte,\t \"Val\": Val\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1400,
+        "wires": [
+            [
+                "47048033.19f3a"
+            ]
+        ]
+    },
+    {
+        "id": "6bdb26ba.905ac8",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Updating Values",
+        "info": "",
+        "x": 740,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "7caab3.180fe54c",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1560,
+        "wires": [
+            [
+                "e5176f2d.81dd5"
+            ]
+        ]
+    },
+    {
+        "id": "73d88631.8aa748",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "e5176f2d.81dd5",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.Neuron[0].NeuronId",
+                "pt": "msg",
+                "from": "Dyn",
+                "fromt": "str",
+                "to": "CHANGED VALUE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 1560,
+        "wires": [
+            [
+                "73d88631.8aa748"
+            ]
+        ]
+    },
+    {
+        "id": "e0c31aec.38ae38",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 1720,
+        "wires": [
+            [
+                "cb6ea401.942408"
+            ]
+        ]
+    },
+    {
+        "id": "2b02125e.81c87e",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1410,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "cb6ea401.942408",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Neuron[1]",
+                "pt": "msg",
+                "to": "$each(payload.Neuron[1], function($v,$k){\t$k = \"Data\" ? {\"DataChanged\":$v} : {$k:$v}\t})\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 1720,
+        "wires": [
+            [
+                "2b02125e.81c87e"
+            ]
+        ]
+    },
+    {
+        "id": "8f0568df.445798",
+        "type": "comment",
+        "z": "860df2a6.856f7",
+        "name": "Updating Object Name",
+        "info": "",
+        "x": 760,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "358f2053.91163",
+        "type": "inject",
+        "z": "860df2a6.856f7",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Data\":[{\"ID\":0,\"Address\":116,\"Byte\":4,\"Val\":1700},{\"ID\":1,\"Address\":116,\"Byte\":4,\"Val\":1600}]}]}",
+        "payloadType": "json",
+        "x": 710,
+        "y": 1880,
+        "wires": [
+            [
+                "aae5162b.5edc08"
+            ]
+        ]
+    },
+    {
+        "id": "8aee8979.5d2b88",
+        "type": "debug",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "aae5162b.5edc08",
+        "type": "change",
+        "z": "860df2a6.856f7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$sort(Neuron[1], function($a, $b){\t$a.Address > $b.Address\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 1880,
+        "wires": [
+            [
+                "8aee8979.5d2b88"
+            ]
+        ]
+    },
+    {
+        "id": "8c0d98f6.5d2338",
+        "type": "debug",
+        "z": "910daa92.4e1a58",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "adfcfde6.d6cb5",
+        "type": "json",
+        "z": "910daa92.4e1a58",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 440,
+        "y": 540,
+        "wires": [
+            [
+                "8c0d98f6.5d2338"
+            ]
+        ]
+    },
+    {
+        "id": "7ef4052.c2ac7fc",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "GSR receive LED status",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"Neuron\":[{\"NeuronId\":\"Dyn\"},{\"Meta\":[{\"Type\":\"GSR\",\"Address\":65,\"Byte\":1}]},{\"Data\":[{\"ID\":1,\"Val\":1},{\"ID\":2,\"Val\":1}]}]}",
+        "payloadType": "json",
+        "x": 1250,
+        "y": 980,
+        "wires": [
+            [
+                "c4c590df.7472d"
+            ]
+        ]
+    },
+    {
+        "id": "d169c00e.e86a58",
+        "type": "ui_slider",
+        "z": "1d2737a9.e9bd68",
+        "d": true,
+        "name": "",
+        "label": "{{value}}",
+        "tooltip": "",
+        "group": "9d717f09.84715",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "topicType": "str",
+        "min": "-1024",
+        "max": "1024",
+        "step": 1,
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "12314e09.b59232"
+            ]
+        ]
+    },
+    {
+        "id": "12314e09.b59232",
+        "type": "function",
+        "z": "1d2737a9.e9bd68",
+        "name": "motor1",
+        "func": "\nflow.set(\"storeP1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "c1ab36b5.c86458"
+            ]
+        ]
+    },
+    {
+        "id": "72754745.375098",
+        "type": "function",
+        "z": "1d2737a9.e9bd68",
+        "name": "motor2",
+        "func": "flow.set(\"storeP2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "c1ab36b5.c86458"
+            ]
+        ]
+    },
+    {
+        "id": "1c4f39f4.a156c6",
+        "type": "debug",
+        "z": "1d2737a9.e9bd68",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 960,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c1ab36b5.c86458",
+        "type": "function",
+        "z": "1d2737a9.e9bd68",
+        "name": "",
+        "func": "var msg1 = {};\nvar msg2 = {};\n//node.status({fill:\"green\",shape:\"ring\",text:\"test\"});\nmsg.payload1 = (flow.get(\"storeP1\") || 0);\nmsg.payload2 = (flow.get(\"storeP2\") || 0);\nmsg.payload = {\n    \"Neuron\": [\n        {\n            \"NeuronId\": \"Dyn\"\n        },\n        {\n            \"Meta\": [\n                {\n                    \"Type\": \"GSW\",\n                }\n            ]\n        },\n        {\n            \"Data\": [\n                {\n                    \"ID\": 0,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload1\n                },\n                {\n                    \"ID\": 1,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload2\n                }\n            ]\n        }\n    ]\n};\n//return msg;\n\nmsg1.payload = msg.payload1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg ,msg1, msg2];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 260,
+        "wires": [
+            [
+                "1c4f39f4.a156c6"
+            ],
+            [
+                "d47e3ef7.481ba"
+            ],
+            [
+                "d47e3ef7.481ba"
+            ]
+        ]
+    },
+    {
+        "id": "d570959d.a6caa8",
+        "type": "ui_slider",
+        "z": "1d2737a9.e9bd68",
+        "d": true,
+        "name": "",
+        "label": "{{value}}",
+        "tooltip": "",
+        "group": "9d717f09.84715",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "topicType": "str",
+        "min": "-1024",
+        "max": "1024",
+        "step": 1,
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "72754745.375098"
+            ]
+        ]
+    },
+    {
+        "id": "d47e3ef7.481ba",
+        "type": "ui_chart",
+        "z": "1d2737a9.e9bd68",
+        "d": true,
+        "name": "",
+        "group": "9d717f09.84715",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-1024",
+        "ymax": "1024",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 970,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b891749.2be4c8",
+        "type": "ui_slider",
+        "z": "93253048.ae51c",
+        "name": "Motor1 velocity",
+        "label": "{{value}}",
+        "tooltip": "",
+        "group": "9d717f09.84715",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "topicType": "str",
+        "min": "-22",
+        "max": "22",
+        "step": 1,
+        "x": 1200,
+        "y": 860,
+        "wires": [
+            [
+                "57653576.ad59ec"
+            ]
+        ]
+    },
+    {
+        "id": "57653576.ad59ec",
+        "type": "function",
+        "z": "93253048.ae51c",
+        "name": "Motor1 ",
+        "func": "\nflow.set(\"storeP1\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 860,
+        "wires": [
+            [
+                "eb0d936.2e9fc7"
+            ]
+        ]
+    },
+    {
+        "id": "5f6524c7.b2cc0c",
+        "type": "function",
+        "z": "93253048.ae51c",
+        "name": "Motor2",
+        "func": "flow.set(\"storeP2\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 920,
+        "wires": [
+            [
+                "eb0d936.2e9fc7"
+            ]
+        ]
+    },
+    {
+        "id": "eb0d936.2e9fc7",
+        "type": "function",
+        "z": "93253048.ae51c",
+        "name": "",
+        "func": "var msg1 = {};\nvar msg2 = {};\n//node.status({fill:\"green\",shape:\"ring\",text:\"test\"});\nmsg.payload1 = (flow.get(\"storeP1\") || 0);\nmsg.payload2 = (flow.get(\"storeP2\") || 0);\nmsg.payload = {\n    \"Neuron\": [\n        {\n            \"NeuronId\": \"Dyn\"\n        },\n        {\n            \"Meta\": [\n                {\n                    \"Type\": \"GSW\",\n                }\n            ]\n        },\n        {\n            \"Data\": [\n                {\n                    \"ID\": 1,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload1\n                },\n                {\n                    \"ID\": 2,\n                    \"Address\": 104,\n                    \"Byte\": 4,\n                    \"Val\": msg.payload2\n                }\n            ]\n        }\n    ]\n};\n//return msg;\n\nmsg1.payload = msg.payload1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg ,msg1, msg2];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 880,
+        "wires": [
+            [
+                "a323b3ff.54ca7",
+                "c4c590df.7472d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f2684e6f.356bf",
+        "type": "ui_slider",
+        "z": "93253048.ae51c",
+        "name": "Motor2 velocity",
+        "label": "{{value}}",
+        "tooltip": "",
+        "group": "9d717f09.84715",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "topicType": "str",
+        "min": "-22",
+        "max": "22",
+        "step": 1,
+        "x": 1200,
+        "y": 920,
+        "wires": [
+            [
+                "5f6524c7.b2cc0c"
+            ]
+        ]
+    },
+    {
+        "id": "f8022009.bd8fe",
+        "type": "ui_chart",
+        "z": "93253048.ae51c",
+        "name": "",
+        "group": "9d717f09.84715",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1970,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14a58f4c.6df5c1",
+        "type": "mqtt in",
+        "z": "93253048.ae51c",
+        "name": "Position Subscriber",
+        "topic": "Robotid/Neuronid/Outgoing",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "56d0111f.5bf52",
+        "nl": false,
+        "rap": false,
+        "x": 1290,
+        "y": 640,
+        "wires": [
+            [
+                "4487c1f0.807fc"
+            ]
+        ]
+    },
+    {
+        "id": "4487c1f0.807fc",
+        "type": "json",
+        "z": "93253048.ae51c",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1480,
+        "y": 640,
+        "wires": [
+            [
+                "76cf3aac.d450e4",
+                "dd286412.5f08e8"
+            ]
+        ]
+    },
+    {
+        "id": "76cf3aac.d450e4",
+        "type": "function",
+        "z": "93253048.ae51c",
+        "name": "",
+        "func": "var msg1 = {};\nvar msg2 = {};\n\nmsg1.payload = msg.payload.m1;\nmsg1.topic = 'Motor 1';\n\nmsg2.payload = msg.payload.m2;\nmsg2.topic = 'Motor 2';\n\nreturn [msg1, msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 640,
+        "wires": [
+            [
+                "f8022009.bd8fe"
+            ],
+            [
+                "f8022009.bd8fe"
+            ]
+        ]
+    },
+    {
+        "id": "dd286412.5f08e8",
+        "type": "debug",
+        "z": "93253048.ae51c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1950,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a323b3ff.54ca7",
+        "type": "debug",
+        "z": "93253048.ae51c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1940,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "83beecec.1abcf",
+        "type": "comment",
+        "z": "4c105b51.bf77b4",
+        "name": "Read me",
+        "info": "This charting example extends node-red-dashboard and the work by Colin Law here:\nhttp://flows.nodered.org/flow/c3dc75c47323a2754f5285225bce64b5\n\nView the chart at http://localhost:1880/ui\n\nBoth the dashboard chart and Colin's example uses time as the X-axis. The example\nhere uses an integer as the x-axis. Colin's example uses Chart.js inside a\nnode-red-dashboard template node. The example here leaves Colin's code almost \nunchanged except that the chart.js XAxis is changed from:\n\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    }\n                }],\n\nto this:\n              xAxes: [{\n                    type: 'linear',\n                    position: 'bottom'\n                    }\n                ],\n                \nI also adjusted the way the nodes are rendered.\n\nThis example pre-prepares the data object and uses the msg.action = \"load\" \nmethod to ask the template code to render the data. \n\nA dashboard button on the UI page generates fresh data with a different \nscale each time.\n\n\n",
+        "x": 400,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2b14c627.b060aa",
+        "type": "ui_template",
+        "z": "4c105b51.bf77b4",
+        "group": "b1d9d1fa.350a38",
+        "name": "Chart.js example",
+        "order": 9,
+        "width": "8",
+        "height": "8",
+        "format": "<!-- See the read me comment node. Colin Law's original notes follow -->\n\n<!--\nA node-red Dashboard UI template to draw charts using chart.js\nBefore use download the file Chart.bundle.min.js from chartjs.org and \nsave in an appropriate folder (e.g. .node-red/static). \nIn settings.js set httpStatic to the full path of that folder and restart node-red.\nMake sure that the options for 'Pass through messages' and 'Add output messages' \nin this node are cleared.\nFor basic use set the id and size you want in the canvas tag and set chartID to the id\nSetup chartDef as required for your chart (see the chart.js docs)\nIn addition, for each dataset specify in chartDef the message topic that you will use for that channel.\nTo (optionally) provide the chart with a one-off set of data send the node a message with:\nmsg.action = \"load\"\nmsg.payload = [\n{topic: \"mytopic1\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n{topic: \"mytopic2\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n...]\nWhere mytopic1 and mytopic2 are the the topics specified in the chartDef\n\nTo provide the chart with data incrementally (for a time series for example)\nsend it messages of the form\n{topic: \"mytopic1\", payload: {x:xvalue,y:yvalue}}\nThe chart will be updated as each sample is provided.\nTo limit the growth of the chart set chartMaxPoints and/or chartTimeSpan in the Chart Helper node\nas described at the head of that node.\nIf you find that chart seems to flicker and scroll bars come and go then try \nsetting a size other than auto in the Size specification for this node.\n\nFor Bar charts the x value is the label for the bar and the y value is the bar value\n\nNote that since the chart samples are stored in the browser then the chart will be cleared each\ntime the browser is refreshed (and will be clear on initially opening the view). In order to \nprovided persistency over browser opening and refresh this node may be used in conjunction with\nthe Chart Helper function node.  Details for its use are in the source of that node.\n\nIf your flow includes more that one instance of this script then the line fetching \nChart.bundle.min.js need only be included in one of them\n-->\n\n<script src=\"/Chart.bundle.min.js\"></script>\n<canvas id=\"myChartSimple1\" width=\"300\" height=\"300\"></canvas>\n<script>\n(function() {\n    var chartID = \"myChartSimple1\";           // set this to the id you have specified in the canvas tag above\n    // setup the chart definition as defined in the chart.js documentation, in addition setting up the topic\n    // for each channel\n    var chartDef = {\n        type: 'line',\n        data: {\n            datasets: [{\n                topic: \"Sin\",    // used here not by chart.js\n                label: \"Sin\",\n                yAxisID: \"1\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#0000ff\",\n                pointRadius: 5,\n                pointHoverRadius: 5,\n                pointBorderColor: \"#0000ff\",\n                pointBackgroundColor: \"#0000ff\",\n                backgroundColor:  \"#0000ff\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }, {\n                topic: \"Triangle\",    // used here not by chart.js\n                label: \"Triangle\",\n                yAxisID: \"2\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#ff0000\",\n                pointRadius: 5,\n                pointHoverRadius: 5,\n                pointBorderColor: \"#ff0000\",\n                pointBackgroundColor: \"#ff0000\",\n                backgroundColor:  \"#ff0000\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }]\n        },\n        options: {\n            scales: {\n                xAxes: [{\n                    type: 'linear',\n                    position: 'bottom'\n                    }\n                ],\n                yAxes: [{\n                    id: \"1\",\n                    ticks: {\n                        min: -1,\n                        max: 1,\n                        stepSize: 0.2\n                    }\n                }, {\n                    id: \"2\",\n                    ticks: {\n                        min: -10,\n                        max: 10,\n                        stepSize: 2\n                    }\n                }]\n            },\n            animation: {\n                duration: 0\n            }\n        }\n    }\n        \n/***** You shouldn't normally need to change anything below here *****/    \n    var myChart = null;\n    var loaded = false;     // indicates whether we have already had a load action\n    var chartTimeSpan;\n    var chartMaxPoints;\n\n    function doChart(msg, scope) {\n        if (!myChart) {\n            // chart does not exist so load the data and create it\n            var ctx = document.getElementById(chartID);\n            myChart = new Chart(ctx, chartDef);     \n        }\n        // chart already exists, update it\n        var datasets = myChart.data.datasets;\n        // is this a load or preload action?\n        if (msg.action === \"load\" || msg.action === \"preload\") {\n            // yes, do not allow preload if we have already had a load\n            // so do it if this is a load or we have not previously had a load\n            if (msg.action === \"load\" || !loaded) {\n                // pick up chartTimeSpan and chartMaxPoints if they have been provided\n                if (typeof msg.chartTimeSpan != 'undefined') {\n                    chartTimeSpan = msg.chartTimeSpan;\n                }\n                if (typeof msg.chartMaxPoints != 'undefined') {\n                    chartMaxPoints = msg.chartMaxPoints;\n                }\n                    \n                // replace existing data for matching topics\n                for (var j = 0; j < msg.payload.length; j++) {\n                    var topic = msg.payload[j].topic;\n                    // find it in the chart\n                    for (var i = 0; i < datasets.length; i++) {\n                        if (datasets[i].topic == topic) {\n                            // if stripping old samples by time is required then ensure the x value is Date\n                            if (chartTimeSpan > 0 ) {\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    if (typeof data[k].x === \"string\") {\n                                        data[k].x = new Date(data[k].x);\n                                    }\n                                }\n                            }\n                            if (chartDef.type !== \"bar\") {\n                                datasets[i].data = msg.payload[j].data;\n                            } else {\n                                // bar chart so x values must go to labels and y values to dataset\n                                datasets[i].data = [];\n                                myChart.data.labels = [];\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    datasets[i].data.push(data[k].y);\n                                    myChart.data.labels.push(data[k].x);\n                                }\n                            }\n                            break;\n                        }\n                    }\n                }\n            }\n            if (msg.action === \"load\") loaded = true;\n            myChart.update();\n        } else {\n            // does the topic match one of the datasets?\n            for (var i = 0; i < datasets.length; i++) {\n                if (datasets[i].topic == msg.topic) {\n                    // if stripping old samples by time is required then ensure the x value is Date\n                    if (chartTimeSpan > 0 && typeof msg.payload.x === \"string\") {\n                        msg.payload.x = new Date(msg.payload.x);\n                    }\n                    if (chartDef.type !== \"bar\") {\n                        datasets[i].data.push(msg.payload);\n                    } else {\n                         // bar chart so x value must go to labels and y value to dataset\n                        datasets[i].data.push(msg.payload.y);\n                        myChart.data.labels.push(msg.payload.x);\n                    }\n                    myChart.update();\n                    break;\n                }\n            }\n        }\n        // strip off samples older than now\n        // charTimeSpan == 0 implies don't do it\n        var shifted = false;\n        if (chartTimeSpan > 0) {\n            var now = new Date();\n            var oldestTimeAllowed = now - chartTimeSpan;\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data[0] && getTime(dataset.data[0].x) < oldestTimeAllowed) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        // strip samples off the front if there are now too many\n        // charTimeSpan == 0 implies don't do it\n        if (chartMaxPoints > 0) {\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data.length > chartMaxPoints) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        if (shifted) {\n            myChart.update();\n        }\n    };\n\n    // gets the time of an x value, works for strings or Date types\n    function getTime(x) {\n        if (typeof x === \"string\") x = new Date(x);\n        return x.getTime();\n    }\n    \n    // builds the preload message for sending back to the chart helper\n    function preloadMsg() {\n        var preMsg = {action: \"preload\", payload: \"preload\"};\n        // build array of topics in chart\n        var topics = [];\n        for (var i=0; i<chartDef.data.datasets.length; i++) {\n            topics.push(chartDef.data.datasets[i].topic);\n        }\n        preMsg.topics = topics;\n        // has the chart already been created\n        if (myChart) {\n            preMsg.lastXValue = 1;\n        } else {\n            preMsg.lastXValue = 0;\n        }\n        return preMsg;\n    }\n\n    (function(scope) {\n        // this code gets run when the a view is opened on the node in the browser\n        // send a preload message back to node red to ask it send\n        // us a complete set of data. Pass down max points and time span to the helper node for it to use\n        // plus an array of the topics of interest\n        scope.send( preloadMsg() );\n        \n        scope.$watch('msg', function(msg) {\n            if (msg) {\n                doChart(msg, scope);\n            }\n        });\n    })(scope);\n})();\n</script>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 896.5499572753906,
+        "y": 343.8833312988281,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "382b4940.b5aece",
+        "type": "debug",
+        "z": "4c105b51.bf77b4",
+        "name": "View data object",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 894.0000305175781,
+        "y": 403.1333312988281,
+        "wires": []
+    },
+    {
+        "id": "e8e31a24.1c89d",
+        "type": "inject",
+        "z": "4c105b51.bf77b4",
+        "name": "Load Data Set",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 433.99998474121094,
+        "y": 288.3833312988281,
+        "wires": [
+            [
+                "4f0a7091.a1a64"
+            ]
+        ]
+    },
+    {
+        "id": "4f0a7091.a1a64",
+        "type": "function",
+        "z": "4c105b51.bf77b4",
+        "name": "Pre-load test data",
+        "func": "\n/* This function creates a two data sets, with different topics,\n   the same x values and different y values*/\n\n// Change the scale factor each time.\nvar scale = context.get('scale') || 0;\nif (msg.topic == \"Reset\") {\n    scale = 0;\n}\nscale++;\ncontext.set('scale', scale);\n\nmsg.payload = [];       // This will be an array of {topic, data} objects\nvar dataPoints1 = [];   // These will be the first array of data points \nvar dataPoints2 = [];   // These will be the second array of data points \nvar numPoints = 20;     // We will create one more than this.\n\n// For the first data set create a sine wave\nfor (var i=0; i<=numPoints; i++) {\n    var point = {};\n    point.x = i;\n    point.y = Math.sin(2 * 3.14 * (i/numPoints)) * scale/10;\n    // build the data array    \n    dataPoints1.push(point);\n}\n\n// For the second data set create a triangle\nfor (var i=0; i<=numPoints; i++) {\n    var point = {};\n    point.x = i;\n    if (i<(numPoints/2)) {\n        // ramp up\n        point.y = i * scale/10;\n    }\n    else {\n        // ramp down\n        point.y = (numPoints - i) * scale/10;\n    }\n    dataPoints2.push(point);    // add to the array\n}\n\nmsg.action = \"load\";    // This instructs the chart node to paint the data\n\n// The payload is an array of two {topic, data} objects\nmsg.payload = [{topic: \"Sin\", data: dataPoints1},\n                {topic: \"Triangle\", data: dataPoints2}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 675,
+        "y": 344.5333251953125,
+        "wires": [
+            [
+                "2b14c627.b060aa",
+                "382b4940.b5aece"
+            ]
+        ]
+    },
+    {
+        "id": "60b53a17.513d74",
+        "type": "ui_button",
+        "z": "4c105b51.bf77b4",
+        "name": "New Data Button",
+        "group": "b1d9d1fa.350a38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "New Data",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 421.99998474121094,
+        "y": 346.18333435058594,
+        "wires": [
+            [
+                "4f0a7091.a1a64"
+            ]
+        ]
+    },
+    {
+        "id": "e44ff289.b11b28",
+        "type": "ui_button",
+        "z": "4c105b51.bf77b4",
+        "name": "Reset",
+        "group": "b1d9d1fa.350a38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Reset",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "Reset",
+        "x": 458,
+        "y": 401.1833190917969,
+        "wires": [
+            [
+                "4f0a7091.a1a64"
+            ]
+        ]
+    },
+    {
+        "id": "5813f8b3.fe3fb8",
+        "type": "inject",
+        "z": "93253048.ae51c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1170,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7dcfdf56.eca39",
+        "type": "function",
+        "z": "4c105b51.bf77b4",
+        "name": "",
+        "func": "const user = {\n    id: 1,\n    username: 'brad',\n    email: 'brad@gmail.com'\n}\njsonwebtoken.sign({user:user}, 'secretKey', (err, token)=> {\n    res.json({\n        token\n    });\n    msg.payload = res;\n});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "jsonwebtoken",
+                "module": "jsonwebtoken"
+            }
+        ],
+        "x": 560,
+        "y": 720,
+        "wires": [
+            [
+                "9e64caa1.920078"
+            ]
+        ]
+    },
+    {
+        "id": "f0ae08f.78607f8",
+        "type": "inject",
+        "z": "4c105b51.bf77b4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 720,
+        "wires": [
+            [
+                "7dcfdf56.eca39"
+            ]
+        ]
+    },
+    {
+        "id": "9e64caa1.920078",
+        "type": "debug",
+        "z": "4c105b51.bf77b4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "11f41337.5adc7d",
+        "type": "google-cloud-bigquery",
+        "z": "4c105b51.bf77b4",
+        "account": "7d87676a.6869b8",
+        "keyFilename": "",
+        "projectId": "my-project-1480912023860",
+        "query": "select id, tags from `bigquery-public-data.stackoverflow.posts_questions`\nlimit 10",
+        "name": "",
+        "x": 600,
+        "y": 1200,
+        "wires": [
+            [
+                "df813970.1b08e8"
+            ]
+        ]
+    },
+    {
+        "id": "9cbd37fa.2cec88",
+        "type": "inject",
+        "z": "4c105b51.bf77b4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 1200,
+        "wires": [
+            [
+                "11f41337.5adc7d"
+            ]
+        ]
+    },
+    {
+        "id": "df813970.1b08e8",
+        "type": "debug",
+        "z": "4c105b51.bf77b4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "cdb55f47.8e38d",
+        "type": "function",
+        "z": "99e1f295.93fb5",
+        "name": "",
+        "func": "const auth = firebaseAuth.getAuth();\nconst email = \"misbahhassan08@gmail.com\";\nconst password = \"misbahdev24\";\n firebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n  .then((userCredential) => {\n    // Signed in \n    const user = userCredential.user;\n    // ...\n    msg.payload= user;\n  })\n  .catch((error) => {\n    const errorCode = error.code;\n    const errorMessage = error.message;\n    // ..\n    msg.payload = error;\n  });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n// Code added here will be run once\n// whenever the node is started.\n//initialize App there \nconst firebaseConfig = {\n  apiKey: \"AIzaSyBm9aqlnW3kprayTQRXPM_DXcB3Q3vy45E\",\n  authDomain: \"synapses-323217.firebaseapp.com\",\n  databaseURL: \"https://synapses-323217-default-rtdb.firebaseio.com\",\n  projectId: \"synapses-323217\",\n  storageBucket: \"synapses-323217.appspot.com\",\n  messagingSenderId: \"425490400637\",\n  appId: \"1:425490400637:web:b255d2603e47dfa8673814\",\n  measurementId: \"G-4BZDVWHKZD\"\n};\n\nfirebase.initializeApp(firebaseConfig);\n",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "firebaseApp",
+                "module": "firebase/app"
+            },
+            {
+                "var": "firebaseAuth",
+                "module": "firebase/auth"
+            }
+        ],
+        "x": 640,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "313f3a68.8a40e6",
+        "type": "inject",
+        "z": "99e1f295.93fb5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "d171c69.980c938"
+            ]
+        ]
+    },
+    {
+        "id": "d171c69.980c938",
+        "type": "debug",
+        "z": "99e1f295.93fb5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 300,
+        "wires": []
+    }
+]
