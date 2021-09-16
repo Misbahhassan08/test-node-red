@@ -1751,8 +1751,8 @@
         "z": "4c105b51.bf77b4",
         "name": "Read me",
         "info": "This charting example extends node-red-dashboard and the work by Colin Law here:\nhttp://flows.nodered.org/flow/c3dc75c47323a2754f5285225bce64b5\n\nView the chart at http://localhost:1880/ui\n\nBoth the dashboard chart and Colin's example uses time as the X-axis. The example\nhere uses an integer as the x-axis. Colin's example uses Chart.js inside a\nnode-red-dashboard template node. The example here leaves Colin's code almost \nunchanged except that the chart.js XAxis is changed from:\n\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    }\n                }],\n\nto this:\n              xAxes: [{\n                    type: 'linear',\n                    position: 'bottom'\n                    }\n                ],\n                \nI also adjusted the way the nodes are rendered.\n\nThis example pre-prepares the data object and uses the msg.action = \"load\" \nmethod to ask the template code to render the data. \n\nA dashboard button on the UI page generates fresh data with a different \nscale each time.\n\n\n",
-        "x": 400,
-        "y": 220,
+        "x": 440,
+        "y": 120,
         "wires": []
     },
     {
@@ -2096,8 +2096,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 220,
+        "x": 610,
+        "y": 120,
         "wires": []
     }
 ]
