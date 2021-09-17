@@ -52,6 +52,13 @@
         "id": "d037969a.c83548",
         "type": "tab",
         "label": "Flow 3",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "ba0605f7.2eebc8",
+        "type": "tab",
+        "label": "Flow 4",
         "disabled": false,
         "info": ""
     },
@@ -2125,24 +2132,28 @@
         "wires": []
     },
     {
-        "id": "e4062b30.ec1c98",
-        "type": "trigger",
-        "z": "d037969a.c83548",
+        "id": "e158e9ad.4ce3a8",
+        "type": "inject",
+        "z": "ba0605f7.2eebc8",
         "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "0",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 430,
-        "y": 600,
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 240,
         "wires": [
             []
         ]
